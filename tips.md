@@ -143,3 +143,8 @@ Las propiedades pueden ser requeridas con <type>.isRequired
 ### Manejo de errores
 	- Con el metodo componentDidCatch se logra capturar un error provocado en un componente.
 	- Recibe los parametros "error" e "info"
+
+### Referencia a Eventos de HTML y Formularios
+	- para hacer referencia a un elemento de un formulario se debe hacer a traves de "ref". 
+	- en React no se reconoce value para establecer un valor por defecto, para este caso se debe útilizar defaultValue
+	- solo si el valor de input es dinamico (proviene desde un contenedor) se debe útilizar value={props.value}
