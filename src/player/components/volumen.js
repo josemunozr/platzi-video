@@ -1,12 +1,23 @@
 import React from 'react';
-import VolumenIcon from '../../icons/components/volumen';
+import VolumenOn from '../../icons/components/volumen';
+import VolumenOff from '../../icons/components/volume-off';
 import './volumen.css'
 const Volumen = props => (
   <button className="Volumen">
-    <VolumenIcon 
-      color="white"
-      size={25}
-    />
+    <div onClick={props.handleToggleMute}>
+      {
+        props.volume > 0 ?
+          <VolumenOn 
+            color="white"
+            size={25}
+          />
+        :
+          <VolumenOff 
+            color="white"
+            size={25}
+          />
+      }
+    </div>
     <div className="Volumen-range">
       <input
         type="range"
@@ -14,6 +25,7 @@ const Volumen = props => (
         max={1}
         step={.05}
         onChange={props.handleVolumenChange}
+        value={props.volume}
       />
     </div>
   </button>
