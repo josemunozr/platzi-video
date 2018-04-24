@@ -8,11 +8,13 @@ import HandleError from '../../error/containers/handle-error';
 import VideoPlayer from '../../player/containers/video-player';
 class Home extends Component {
   state = {
-    modalVisible : false
+    modalVisible : false,
+    media : null
   }
-  handleOpenModal = () => {
+  handleOpenModal = (media) => {
     this.setState({
-      modalVisible: true
+      modalVisible: true,
+      media
     })
   }
   handleCloseModal = (event) => {
@@ -30,15 +32,17 @@ class Home extends Component {
             categories={this.props.data.categories}/>
           {
             this.state.modalVisible &&
-            <ModalContainer>
-              <Modal
-                handleClick={this.handleCloseModal}
-              >
-                <VideoPlayer 
-                  autoplay
-                />
-              </Modal>
-            </ModalContainer>
+              <ModalContainer>
+                <Modal
+                  handleClick={this.handleCloseModal}
+                >
+                  <VideoPlayer 
+                    autoplay
+                    title={this.state.media.title}
+                    src={this.state.media.src}
+                  />
+                </Modal>
+              </ModalContainer>
           }
         </HomeLayout>
       </HandleError>

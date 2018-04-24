@@ -8,14 +8,18 @@ class Media extends PureComponent {
     this.state = {
       author: props.author
     };
-  }
+	}
+	
+	handleClick = () => {
+		this.props.openModal(this.props);
+	}
 
 	render () {
 
-	  const { cover, title, author, handleClick} = this.props;
+	  const { cover, title, author} = this.props;
 
 	  return (
-	    <div className='Media' onClick={handleClick}>
+	    <div className='Media' onClick={this.handleClick}>
 	      <div className='Media-cover'>
 	        <img
 						src={cover}
