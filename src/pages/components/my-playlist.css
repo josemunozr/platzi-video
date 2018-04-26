@@ -1,0 +1,22 @@
+.MyPlaylist {
+  color: white;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.MyPlaylist .list{
+  list-style: none;
+  padding-left: 0;
+}
+
+.MyPlaylist .list .item {
+  padding: 10px 0;
+}
+
+.MyPlaylist .list .item a span{
+  margin-right: 20px;
+}
+
+.MyPlaylist .list .item a{
+  display: flex;
+}
