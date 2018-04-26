@@ -28,6 +28,7 @@ class Home extends Component {
         <HomeLayout>
           <Related 
             myPlaylist={this.props.data.myPlaylist}
+            friendPlaylist={this.props.data.friendPlaylist}
           />
           <Categories 
             handleOpenModal={this.handleOpenModal}
@@ -52,4 +53,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default Home;

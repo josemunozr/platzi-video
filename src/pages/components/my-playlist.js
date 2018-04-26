@@ -2,7 +2,7 @@ import React from 'react';
 import './my-playlist.css';
 const MyPlayList = props => (
   <div className="MyPlaylist">
-    <p>My PlayList</p>
+    <p>Mi Playlist</p>
     <ul className="list">
       {
         props.myPlaylist.map(playlist => {

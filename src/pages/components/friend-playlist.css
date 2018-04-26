@@ -1,0 +1,14 @@
+.FriendPlayList {
+  color: white;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.FriendPlayList .list{
+  list-style: none;
+  padding-left: 0;
+}
+
+.FriendPlayList .list .item {
+  padding: 10px 0;
+}
