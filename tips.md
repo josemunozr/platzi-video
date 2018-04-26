@@ -148,3 +148,36 @@ Las propiedades pueden ser requeridas con <type>.isRequired
 	- para hacer referencia a un elemento de un formulario se debe hacer a traves de "ref". 
 	- en React no se reconoce value para establecer un valor por defecto, para este caso se debe útilizar defaultValue
 	- solo si el valor de input es dinamico (proviene desde un contenedor) se debe útilizar value={props.value}
+
+
+## Esquema estructura proyecto
+Platzi-Video <3
+==============
+home - entry point para webpack
+
+  Home - página / (container|smart)
+    -> <!-- Layout - UI -->
+      -> Related - UI
+      -> Categories - UI
+         -> Category - UI
+            -> Playlist - UI
+               -> Media - UI / Pure
+      -> Search / (container|smart)
+         -> <!-- Search Layout UI -->
+            -> Input - UI
+      -> Modal - (container|smart)
+        -> <!-- Layout - UI -->
+          -> VideoPlayer - (container|smart)
+            <!-- Layout -->
+             -> Video - UI state
+             -> Spinner - UI
+             -> Controls - UI
+                -> PlayPause - UI
+                  -> PlayIcon - UI
+                  -> PauseIcon - UI
+                -> Timer - UI
+                -> ProgressBar - UI
+                -> Volume - UI
+                  -> VolumeIcon - UI
+                -> FullScreen - UI
+                  -> FullScreenIcon - UI
