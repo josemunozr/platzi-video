@@ -34,7 +34,8 @@ class Home extends Component {
           />
           <Categories 
             handleOpenModal={this.handleOpenModal}
-            categories={this.props.categories}/>
+            categories={this.props.categories}
+            search={this.props.search}/>
           {
             this.state.modalVisible &&
               <ModalContainer>
@@ -59,7 +60,8 @@ const mapStateToProps = (state, props) => {
   return {
     myPlaylist: state.data.myPlaylist,
     friendPlaylist: state.data.friendPlaylist,
-    categories: state.data.categories
+    categories: state.data.categories,
+    search: state.search
   }
 }
 
