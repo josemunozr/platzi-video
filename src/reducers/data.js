@@ -5,8 +5,8 @@ function data (state, action) {
     if (action.payload.query) {
       const list = state.data.categories[1].playlist;
       results = list.filter(
-          item => item.author
-                    .includes(action.payload.query)
+          item => String(item.author).toLowerCase()
+                    .includes(String(action.payload.query).toLowerCase())
         )
     }
       return {
