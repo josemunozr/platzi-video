@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import HomeLayout from '../components/home-layout';
 import Categories from '../../categories/components/categories';
-import Related from '../components/related';
+import Related from '../../related/containers/related';
 import ModalContainer from '../../widgets/containers/modal';
 import Modal from '../../widgets/components/modal';
 import HandleError from '../../error/containers/handle-error';
@@ -57,10 +57,25 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state, props) => {
+  const categories = state.data.categories.map( 
+    categoryId => state.data.entities.categories[categoryId]
+  )
+
+  const myPlaylist = state.data.myPlaylist.map(
+    playListId => state.data.entities.myPlaylist[playListId]
+  )
+
+  const friendPlaylist = state.data.friendPlaylist.map(
+    friendPlayListId => state.data.entities.friendPlaylist[friendPlayListId]
+  )
+
+  // console.log(myPlaylist);
+  // console.log(friendPlaylist);
+  
   return {
-    myPlaylist: state.data.myPlaylist,
-    friendPlaylist: state.data.friendPlaylist,
-    categories: state.data.categories,
+    myPlaylist: myPlaylist,
+    friendPlaylist: friendPlaylist,
+    categories: categories,
     search: state.search
   }
 }
