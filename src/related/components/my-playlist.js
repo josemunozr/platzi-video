@@ -10,9 +10,9 @@ const MyPlayList = props => (
           return (
             <li
               className="item"
-              key={playlist.id}
+              key={playlist.get('id')}
             >
-              <a> <span className="item-number">{playlist.id}</span> {playlist.title}</a>
+              <a> <span className="item-number">{playlist.get('id')}</span> {playlist.get('title')}</a>
             </li>
           )
         })

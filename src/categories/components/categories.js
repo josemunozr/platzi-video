@@ -9,15 +9,24 @@ function Categories(props) {
       <Search />
       {
         props.search.map((item) => {
-          return <Media {...item} key={item.id}/>
+          return (
+            <Media 
+              key={item.get('id')}
+              author={item.get('author')}
+              cover={item.get('cover')}
+              title={item.get('title')}
+            />
+          )
         })
       }
       {
         props.categories.map((item) => {
           return (
             <Category 
-              key={item.id} 
-              {...item} 
+              key={item.get('id')}
+              description={item.get('description')}
+              title={item.get('title')}
+              playlist={item.get('playlist')}
               handleOpenModal={props.handleOpenModal}
             />
           )

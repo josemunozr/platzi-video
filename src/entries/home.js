@@ -1,33 +1,19 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Home from '../pages/containers/home';
-// import data from '../api.json'
 import { Provider } from 'react-redux';
-import data from '../schemas/index';
 import { createStore } from 'redux';
-import reducer from '../reducers/data';
-
-console.log(data)
-
-const initialState = {
-  data: {
-    entities: data.entities,
-    categories: data.result.categories,
-    myPlaylist: data.result.myPlaylist,
-    friendPlaylist: data.result.friendPlaylist,
-  },
-  search: []
-}
+import reducer from '../reducers/index';
+import { Map as map} from 'immutable';
 
 const store = createStore(
   reducer,
-  initialState,
+  map(),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 
 const homeContainer = document.getElementById('home-container')
-
 
 render(
   <Provider store={store}>

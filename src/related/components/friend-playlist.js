@@ -10,11 +10,11 @@ const FriendPlayList = props => (
           return (
             <li
               className="item"
-              key={user.id}
+              key={user.get('id')}
             >
             <Avatar 
-              src={user.avatar}
-              name={user.name}
+              src={user.get('avatar')}
+              name={user.get('name')}
             />
             </li>
           )
