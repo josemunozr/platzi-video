@@ -12,9 +12,11 @@ function Categories(props) {
           return (
             <Media 
               key={item.get('id')}
+              id={item.get('id')}
               author={item.get('author')}
               cover={item.get('cover')}
               title={item.get('title')}
+              openModal={props.handleOpenModal}
             />
           )
         })
