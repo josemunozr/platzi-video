@@ -31,6 +31,6 @@ export function searchAsyncEntities(query) {
   return dispatch => {
     setTimeout(() => {
       dispatch(searchEntities(query))
-    }, 5000);
+    }, 1000);
   }
 }
