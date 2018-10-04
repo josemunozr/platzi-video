@@ -27,3 +27,10 @@ export function searchEntities(query) {
    }
   }
 }
+export function searchAsyncEntities(query) {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(searchEntities(query))
+    }, 5000);
+  }
+}
