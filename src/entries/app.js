@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import Home from '../pages/containers/home';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import reducer from '../reducers/index';
+import reducer from '../reducers';
 import { Map as map} from 'immutable';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
