@@ -5,9 +5,12 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducer from '../reducers';
 import { Map as map} from 'immutable';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+
+import { BrowserRouter } from 'react-router-dom';
+
 // const logger = ({ getState, dispatch }) => next => action => {
 //   console.log('viejo estado', getState().toJS());
 //   console.log('acción', action );
@@ -31,7 +34,11 @@ const store = createStore(
 const homeContainer = document.getElementById('home-container')
 
 render(
-  <Provider store={store}>
-    <Home />
-  </Provider>  
+  <BrowserRouter
+    basename="/videos"
+  >
+    <Provider store={store}>
+      <Home />
+    </Provider>  
+  </BrowserRouter>  
 , homeContainer)
