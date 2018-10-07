@@ -18,6 +18,13 @@ class Videos extends Component {
   handleCloseModal = (event) => {
     this.props.actions.closeModal()
   }
+  componentDidMount() {
+    const search = this.props.location.search;
+    const id = search.split('=')[1];
+    if (search) {
+      this.handleOpenModal(id)
+    }
+  }
   render () {
     return(
       <HandleError>
