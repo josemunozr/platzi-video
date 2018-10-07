@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from '../pages/components/header.js';
 import Home from '../pages/components/home';
 import Videos from '../pages/containers/videos';
+import NotFoud from '../pages/components/not-found';
 
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -42,8 +43,11 @@ render(
     <Provider store={store}>
      <Fragment>
       <Header />
-      <Route exact path="/" component={Home} />
-      <Route exact path="/videos" component={Videos} />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/videos" component={Videos} />
+        <Route component={NotFoud} />
+      </Switch>
      </Fragment>
     </Provider>  
   </BrowserRouter>  
