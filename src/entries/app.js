@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import Header from '../pages/components/header.js';
 import Home from '../pages/components/home';
@@ -46,6 +46,7 @@ render(
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/videos" component={Videos} />
+        <Redirect from="/v" to="/videos" />
         <Route component={NotFoud} />
       </Switch>
      </Fragment>

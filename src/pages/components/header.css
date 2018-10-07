@@ -3,20 +3,18 @@
   display: flex;
   align-items: center;
 }
-
 .Header nav {
   flex: 1;
   align-self: stretch;
   display: flex;
 }
-
 .Header img {
   align-self: flex-start;
 }
 
 .Header nav ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10,100px));
+  grid-template-columns: repeat(auto-fit, minmax(10px, 100px));
   padding: 0;
   margin: 0;
   flex: 1;
