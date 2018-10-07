@@ -1,6 +1,11 @@
 import React, { Fragment } from 'react';
 import { render } from 'react-dom';
-import Home from '../pages/containers/home';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import Header from '../pages/components/header.js';
+import Home from '../pages/components/home';
+import Videos from '../pages/containers/videos';
+
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducer from '../reducers';
@@ -9,8 +14,6 @@ import { Map as map} from 'immutable';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { BrowserRouter } from 'react-router-dom';
-import Header from '../pages/components/header.js';
 
 // const logger = ({ getState, dispatch }) => next => action => {
 //   console.log('viejo estado', getState().toJS());
@@ -39,7 +42,8 @@ render(
     <Provider store={store}>
      <Fragment>
       <Header />
-      <Home />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/videos" component={Videos} />
      </Fragment>
     </Provider>  
   </BrowserRouter>  

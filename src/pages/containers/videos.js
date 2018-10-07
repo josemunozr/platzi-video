@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HomeLayout from '../components/home-layout';
+import VideosLayout from '../components/videos-layout';
 import Categories from '../../categories/components/categories';
 import Related from '../../related/containers/related';
 import ModalContainer from '../../widgets/containers/modal';
@@ -8,10 +8,10 @@ import HandleError from '../../error/containers/handle-error';
 import VideoPlayer from '../../player/containers/video-player';
 import { connect } from 'react-redux';
 import { List as list } from 'immutable';
-import * as actions from '../../actions/index';
+import * as actions from '../../actions';
 import { bindActionCreators } from 'redux';
 
-class Home extends Component {
+class Videos extends Component {
   handleOpenModal = (id) => {
     this.props.actions.openModal(id)
   }
@@ -21,7 +21,7 @@ class Home extends Component {
   render () {
     return(
       <HandleError>
-        <HomeLayout>
+        <VideosLayout>
           <Related 
             myPlaylist={this.props.myPlaylist}
             friendPlaylist={this.props.friendPlaylist}
@@ -45,7 +45,7 @@ class Home extends Component {
                 </Modal>
               </ModalContainer>
           }
-        </HomeLayout>
+        </VideosLayout>
       </HandleError>
     )
   }
@@ -90,4 +90,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default  connect(mapStateToProps, mapDispatchToProps)(Home);
+export default  connect(mapStateToProps, mapDispatchToProps)(Videos);

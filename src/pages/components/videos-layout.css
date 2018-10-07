@@ -4,7 +4,7 @@ body {
   background: #171c30;
 }
 
-.HomeLayout {
+.VideosLayout {
   display: flex;
   margin: 0 auto;
   min-height: 100vh;
