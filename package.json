@@ -10,7 +10,6 @@
     "build:local": "webpack --env.NODE_ENV=local",
     "build:prod": "webpack -p --env.NODE_ENV=production",
     "build:server": "webpack --env.NODE_ENV=local --config ./webpack.server.config.js"
-    
   },
   "devDependencies": {
     "babel-core": "6.26.0",
@@ -29,6 +28,7 @@
     "webpack-dev-server": "2.9.3"
   },
   "dependencies": {
+    "express": "4.16.3",
     "immutable": "3.8.2",
     "normalizr": "3.2.4",
     "prop-types": "15.6.1",
