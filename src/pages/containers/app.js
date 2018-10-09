@@ -10,6 +10,7 @@ import reducer from '../../reducers/index';
 import Header from '../components/header';
 import Home from '../components/home';
 import Videos from '../containers/videos';
+import Video from '../containers/video';
 import NotFoud from '../components/not-found';
  
 
@@ -33,7 +34,9 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/videos" component={Videos} />
+          <Route exact path="/video/:id" component={Video} />
           <Redirect from="/v" to="/videos" />
+          <Redirect from="/v:id" to="/video/:id" />
           <Route component={NotFoud} />
         </Switch>
         </Fragment>

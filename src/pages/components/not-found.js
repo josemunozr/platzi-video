@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import './generic-page.css';
+import { withRouter } from 'react-router';
 
 class NotFoud extends PureComponent {
   handleBackClick = () => {
@@ -45,4 +46,4 @@ class NotFoud extends PureComponent {
   }
 }
  
-export default NotFoud;
+export default withRouter(NotFoud);
